@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "acts_as_translatable"
   gem.homepage = "http://github.com/lou/acts_as_translatable"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Translate ActiveRecord columns}
+  gem.description = %Q{Translate ActiveRecord columns}
   gem.email = "louiscuny@gmail.com"
   gem.authors = ["lou"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
