@@ -13,7 +13,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "acts_as_translatable"
-  gem.homepage = "http://github.com/lou/acts_as_translatable"
+  gem.homepage = "http://github.com/citizencast/acts_as_translatable"
   gem.license = "MIT"
   gem.summary = %Q{Translate ActiveRecord columns}
   gem.description = %Q{Translate ActiveRecord columns}
