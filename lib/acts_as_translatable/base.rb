@@ -10,7 +10,7 @@ module ActsAsTranslatable
         if I18n.default_locale == col.split('_').last.to_sym
           m_name = col.gsub("_#{I18n.locale}", '').to_sym 
           define_method m_name do
-            c_name = self.is_model_column?("#{m_name}_#{I18n.locale}") ? "#{m_name}_#{I18n.locale}" : "#{m_name}_#{I18n.default_locale}"
+            c_name = self.class.is_model_column?("#{m_name}_#{I18n.locale}") ? "#{m_name}_#{I18n.locale}" : "#{m_name}_#{I18n.default_locale}"
             send(c_name)
           end
         end
