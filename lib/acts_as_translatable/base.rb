@@ -5,7 +5,7 @@ module ActsAsTranslatable
       column_names.include?( column.to_s )
     end
 
-    #FIXED? => Je pense qu'il faut appeler la class avec "self" car sinon c'est interprété comme InstanceMethod, non? Ca me semble marcher chez moi comme ça en tout cas (test sur un model avec Rspec)
+    #FIXED? = Je pense qu'il faut appeler la class avec "self" car sinon c'est interprété comme InstanceMethod, non? Ca me semble marcher chez moi comme ça en tout cas (test sur un model avec Rspec)
     def acts_as_translatable
       self.column_names.each do |col|
         if I18n.default_locale == col.split('_').last.to_sym
