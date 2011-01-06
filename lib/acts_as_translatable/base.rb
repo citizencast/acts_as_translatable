@@ -9,15 +9,16 @@ module ActsAsTranslatable
       column_names.each do |col|
         locale = col.split('_').last.to_sym
         if I18n.default_locale == locale
-          m_name = col.gsub("_#{locale}", '').to_sym 
-          define_method m_name do
-            c_name = self.class.is_model_column?("#{m_name}_#{I18n.locale}") ? "#{m_name}_#{I18n.locale}" : "#{m_name}_#{I18n.default_locale}"
-            send(c_name)
-          end
+          m_name = col.gsub("_#{locale}", '').to_sym
+          class_eval %{
+            def #{m_name}
+              c_name = self.class.is_model_column?("#{m_name}_#{I18n.locale}") ? "#{m_name}_#{I18n.locale}" : "#{m_name}_#{I18n.default_locale}"
+              send(c_name)
+            end
+          }
         end
-      end
-
+      end 
     end
-      
+
   end
 end
